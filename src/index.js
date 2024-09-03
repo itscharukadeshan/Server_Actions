@@ -27,6 +27,8 @@ app.get("/me_tube", async (req, res) => {
     const downloadButtons = await page.$$("fa-icon .fa-download");
     const clickPromises = downloadButtons.map((button) => button.click());
 
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     await Promise.all(clickPromises);
 
     await browser.close();
