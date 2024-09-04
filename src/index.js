@@ -16,8 +16,7 @@ app.get("/", (req, res) => {
 
 app.get("/me_tube", async (req, res) => {
   try {
-    const browser = await puppeteer.launch({
-      args: [`--remote-debugging-port=9222`],
+    const browser = await puppeteer.connect({
       browserWSEndpoint: BROWSER_ENDPOINT,
     });
 
